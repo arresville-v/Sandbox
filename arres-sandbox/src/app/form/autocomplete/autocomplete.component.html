@@ -1,0 +1,10 @@
+<mat-form-field>
+    <mat-label>{{label}}</mat-label>
+    <input type="text" matInput [formControl]="control"
+        [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="writeValue($event.option.value)">
+        <mat-option *ngFor="let item of filteredItems | async" [value]="item">
+            {{item}}
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>

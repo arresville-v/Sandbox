@@ -1,0 +1,46 @@
+<div class="box">
+    <div class="box">
+        <span>
+            This is an implementation of a dynamic reactive form. You can add and remove form controls as you go.
+        </span>
+    </div>
+    <div class="box" fxLayout="column" style="width: 200px; margin-bottom: 36px;">
+        <mat-form-field floatLabel="always">
+            <mat-label>Control Type</mat-label>
+            <mat-select [formControl]="controlType">
+                <mat-option [value]="0"></mat-option>
+                <mat-option *ngFor="let control of controlList" [value]="control.value">{{control.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <small *ngIf="controlType.value === 3" style="color: gray; margin-bottom: 12px;">Autocomplete values will be based on the item names you've added.</small>
+        <mat-form-field floatLabel="always">
+            <input placeholder="Control Label" [formControl]="controlLabel" mat-input matInput>
+        </mat-form-field>
+        <small *ngIf="isLabelDuplicate" style="color: red; margin-bottom: 12px;">Label is a duplicate, please change it.</small>
+        <button mat-raised-button color="primary" [disabled]="(controlType.value ? false : true)
+            || controlLabel.value === '' || !controlLabel.value || isLabelDuplicate" (click)="onAddControl();">Add Control</button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="box" fxLayout="column" style="margin-top: 36px;">
+        <form [formGroup]="form">
+            <div *ngFor="let control of controls">
+                <div [ngSwitch]="control.type">
+                    <app-text [label]="control.label" (onRemove)="removeControl(control.label)"
+                        [formControlName]="control.label" *ngSwitchCase="1"></app-text>
+                    <app-date [label]="control.label" (onRemove)="removeControl(control.label)"
+                    [formControlName]="control.label" *ngSwitchCase="2"></app-date>
+                    <app-autocomplete [label]="control.label" (onRemove)="removeControl(control.label)"
+                    [formControlName]="control.label" *ngSwitchCase="3"></app-autocomplete>
+                    <app-linked [label]="control.label" (onRemove)="removeControl(control.label)"
+                    [formControlName]="control.label" *ngSwitchCase="4"></app-linked>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="box">
+        <button mat-raised-button color="primary"
+            [disabled]="form.get('Name').value ? form.get('Name').value === '' : true" (click)="onSaveItem();">Save
+            Item</button>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="box">
+    <div class="box">
+        <div style="margin-bottom:24px;">Items added in form will be listed here</div>
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div>View Mode</div>
+            <button mat-raised-button [ngStyle]="isList && {'color': 'white', 'background-color': 'teal'}"
+                (click)="isList = true" class="header__item">List</button>
+            <button mat-raised-button [ngStyle]="!isList && {'color': 'white', 'background-color': 'teal'}"
+                (click)="isList = false" class="header__item">Card</button>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div *ngIf="isList" class="box">
+        <app-list [item]="item" (removeItem)="removeItem(i)" *ngFor="let item of items; let i = index"></app-list>
+    </div>
+    <div *ngIf="!isList" class="grid">
+        <app-card [item]="item" (removeItem)="removeItem(i)" *ngFor="let item of items; let i = index"></app-card>
+    </div>
+</div>

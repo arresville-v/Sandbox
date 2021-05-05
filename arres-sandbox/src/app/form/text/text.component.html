@@ -1,0 +1,4 @@
+<mat-form-field floatLabel="always">
+    <input [formControl]="control" [placeholder]="label" mat-input matInput>
+    <span *ngIf="label !== 'Name'" matSuffix style="color:red; cursor: pointer;" (click)="onRemove.emit();">X</span>
+</mat-form-field>

@@ -1,0 +1,52 @@
+[
+    {
+        "id": 6,
+        "parent_id": 1,
+        "value": "Astrology"
+    },
+    {
+        "id": 7,
+        "parent_id": 1,
+        "value": "Astronomy"
+    },
+    {
+        "id": 8,
+        "parent_id": 2,
+        "value": "Biology"
+    },
+    {
+        "id": 9,
+        "parent_id": 2,
+        "value": "Bathtub"
+    },
+    {
+        "id": 10,
+        "parent_id": 2,
+        "value": "Bravo"
+    },
+    {
+        "id": 11,
+        "parent_id": 3,
+        "value": "Cosmetology"
+    },
+    {
+        "id": 12,
+        "parent_id": 3,
+        "value": "Chemistry"
+    },
+    {
+        "id": 13,
+        "parent_id": 4,
+        "value": "Dentistry"
+    },
+    {
+        "id": 14,
+        "parent_id": 4,
+        "value": "Death star"
+    },
+    {
+        "id": 15,
+        "parent_id": 5,
+        "value": "Eggs"
+    }
+]

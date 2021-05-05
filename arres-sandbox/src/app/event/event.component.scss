@@ -1,0 +1,40 @@
+ 
+  .parallax {
+    
+
+    /* Set a specific height */
+    min-height: 600px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #parallax_1 {
+    background-image: url("../../assets/teuku.jpg");
+  }
+
+  #parallax_2 {
+    background-image: url("../../assets/hobbies.jpg");
+  }
+
+  #parallax_3 {
+    background-image: url("../../assets/moving.jpg");
+  }
+  
+  .foreground {
+    margin-top: auto;
+    margin-bottom: 50px;
+    transform-origin: 0;
+    transform: translateZ(3px);
+  }
+  
+  .text_container {
+    font-size: 36px;
+    background-color: white;
+    text-align:center;
+    height: 300px;
+    color: black;
+  }

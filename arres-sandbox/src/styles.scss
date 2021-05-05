@@ -1,0 +1,71 @@
+@import "~@angular/material/theming";
+
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+$arres-blue: (
+  50: #e4f0fb,
+  100: #bcd9f6,
+  200: #90c0f0,
+  300: #63a6e9,
+  400: #4193e5,
+  500: #2080e0,
+  600: #1c78dc,
+  700: #186dd8,
+  800: #1363d3,
+  900: #0b50cb,
+  A100: #f6f9ff,
+  A200: #c3d6ff,
+  A400: #90b3ff,
+  A700: #77a1ff,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: black,
+    A200: black,
+    A400: black,
+    A700: white,
+  ),
+);
+
+$cp-app-primary: mat-palette($arres-blue, 500);
+$cp-app-accent: mat-palette($mat-blue-grey, 700);
+// The warn palette is optional (defaults to red).
+$cp-app-warn: mat-palette($mat-red);
+// Create the theme object (a Sass map containing all of the palettes).
+$cp-app-theme: mat-light-theme($cp-app-primary, $cp-app-accent, $cp-app-warn);
+@include angular-material-theme($cp-app-theme);
+body {
+    height: 100vh !important; 
+    width: 100vw !important;
+    margin: 0 !important;
+}
+* {
+    font-family: Roboto, Helvetica, sans-serif;
+}
+.container {
+    width: 100%;
+    height: 100%;
+}
+.header {
+    width: 100vw;
+    height: 64px;
+    background-color: #008080;
+    color: white;
+}
+.header__item {
+    margin-left: 12px !important;
+}
+.box {
+    margin: 12px;
+}

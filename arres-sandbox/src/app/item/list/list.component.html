@@ -1,0 +1,9 @@
+<div style="border: 1px solid #a0a0a0; height: 64px; margin: 12px; padding: 12px;">
+    <div fxLayoutAlign="space-between center">
+        <div>Name: {{item.Name}}</div>
+        <div style="color:red; cursor: pointer;" (click)="removeItem.emit();">X</div>
+    </div>
+    <div>{{primaryDesc ? itemDescriptionArr[0].key + ":" : ''}}{{primaryDesc}}</div>
+    <div>{{secondaryDesc ? itemDescriptionArr[1].key + ":" : ''}}{{secondaryDesc}}</div>
+</div>
+    
